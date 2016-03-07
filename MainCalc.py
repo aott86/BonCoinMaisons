@@ -8,7 +8,7 @@ import time
 from HouseModel import HouseModel
 
 
-csvName = 'houseList_1456077767.72.csv'
+csvName = 'houseList_1457298702.57.csv'
 print('csvName:' + csvName)
 
 def adjustPrice(row):
@@ -32,6 +32,5 @@ dataFrame = dataFrame[dataFrame['m2adjustPrice']>0]
 dataFrame = dataFrame[dataFrame['adjustPrice']<270000]
 dataFrame = dataFrame[dataFrame['surface']>80]
 dataFrame = dataFrame.groupby(as_index=False, by=['city']).agg({'m2adjustPrice': numpy.mean}).sort('m2adjustPrice')
-plt.figure()
 dataFrame.plot(kind='bar', x='city', y='m2adjustPrice')
-toto=1
+plt.show()
